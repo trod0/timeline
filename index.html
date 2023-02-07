@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles.css">
+  <title>Kalendář</title>
+</head>
+<body>
+<header id="main-header">
+  <div class="container">
+    <h1><i class="fas fa-brain"></i> Kalendář</h1>
+    <h3><i class="fas fa-user"></i> Lukáš Kubánek</h3>
+  </div>
+</header>
+<section id="timeline">
+  <ul>
+    <li>
+      <div>
+        <h3><i class="fas fa-chevron-right"></i> 6. února 2023</h3>
+        <p>Prázdniny.</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h3><i class="fas fa-chevron-right"></i> 7. února 2O23</h3>
+        <p>Máme supl na matematiku</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h3><i class="fas fa-chevron-right"></i> 8. února 2023</h3>
+        <p>Úkol do ekonomie</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h3><i class="fas fa-chevron-right"></i>9. února 2023</h3>
+        <p>Jedu vlakem do Brna.</p>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h3><i class="fas fa-chevron-right"></i> 10. února 2023</h3>
+        <p>Hokejový zápas Kometa Brno vs Oceláři Třínec.</p>
+      </div>
+    </li><li>
+    <div>
+      <h3><i class="fas fa-chevron-right"></i>11. února 2023</h3>
+      <p>Jedu zpět do Opavy</p>
+    </div>
+  </li><li>
+    <div>
+      <h3><i class="fas fa-chevron-right"></i> 12. února 2023</h3>
+      <p>Jdu se psem k veterináři</p>
+    </div>
+  </li><li>
+    <div>
+      <h3><i class="fas fa-chevron-right"></i> 13. února 2023</h3>
+      <p>Navštěva doktora.</p>
+    </div>
+  </li><li>
+    <div>
+      <h3><i class="fas fa-chevron-right"></i> 14. února 2023</h3>
+      <p>Práce 12:00-18:00.</p>
+    </div>
+  </li>
+    <li>
+      <div>
+        <h3><i class="fas fa-chevron-right"></i> 15. února 2023</h3>
+        <p>|Volno. </p>
+      </div>
+    </li>
+  </ul>
+</section>
+<script>const items = document.querySelectorAll("#timeline li");
+
+const isInViewport = (el) => {
+  const rect = el.getBoundingClientRect();
+  return (
+          rect.top >= 0 &&
+          rect.left >= 0 &&
+          rect.bottom <=
+          (window.innerHeight || document.documentElement.clientHeight) &&
+          rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+};
+
+const run = () =>
+        items.forEach((item) => {
+          if (isInViewport(item)) {
+            item.classList.add("show");
+          }
+        });
+
+// Events
+window.addEventListener("load", run);
+window.addEventListener("resize", run);
+window.addEventListener("scroll", run);
+</script>
+</body>
+</html>
